@@ -17,6 +17,26 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles0, function (s
         game.splash("Find the token", "Then come back")
     }
 })
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    Snail.setImage(img`
+        . . . . . . . . . . . c c . . . 
+        . . . . . . . c c c c 6 9 c . . 
+        . . . . . . c 6 9 9 9 9 6 c . . 
+        . . c c . c 6 c c 9 9 9 9 9 c . 
+        . b 5 5 c 6 c 5 5 c 9 9 9 9 9 c 
+        . f f 5 c 6 c 5 f f 9 9 9 9 9 c 
+        . f f 5 c 6 c 5 f f 6 9 9 9 c c 
+        . b 5 5 9 c 9 5 5 c 6 6 6 6 c c 
+        . . b 5 5 9 5 5 c 9 9 9 9 9 9 c 
+        . c c 5 5 5 5 5 b c c 9 9 9 9 c 
+        c 5 5 4 5 5 5 4 b 5 5 c 9 9 c . 
+        b 5 4 b 4 4 4 4 b b 5 c b b . . 
+        c 4 5 5 b 4 b 5 5 5 4 c 4 5 b . 
+        c 5 5 5 c 4 c 5 5 5 c 4 c 5 c . 
+        c 5 5 5 5 c 5 5 5 5 c 4 c 5 c . 
+        . c c c c c c c c c . . c c c . 
+        `)
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
     if (info.score() == 3) {
         game.over(true)
@@ -42,6 +62,26 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles28, function (
     } else {
         game.splash("Find the token", "Then come back")
     }
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    Snail.setImage(img`
+        . . . c c . . . . . . . . . . . 
+        . . c 9 6 c c c c . . . . . . . 
+        . . c 6 9 9 9 9 6 c . . . . . . 
+        . c 9 9 9 9 9 c c 6 c . c c . . 
+        c 9 9 9 9 9 c 5 5 c 6 c 5 5 b . 
+        c 9 9 9 9 9 f f 5 c 6 c 5 f f . 
+        c c 9 9 9 6 f f 5 c 6 c 5 f f . 
+        c c 6 6 6 6 c 5 5 9 c 9 5 5 b . 
+        c 9 9 9 9 9 9 c 5 5 9 5 5 b . . 
+        c 9 9 9 9 c c b 5 5 5 5 5 c c . 
+        . c 9 9 c 5 5 b 4 5 5 5 4 5 5 c 
+        . . b b c 5 b b 4 4 4 4 b 4 5 b 
+        . b 5 4 c 4 5 5 5 b 4 b 5 5 4 c 
+        . c 5 c 4 c 5 5 5 c 4 c 5 5 5 c 
+        . c 5 c 4 c 5 5 5 5 c 5 5 5 5 c 
+        . c c c . . c c c c c c c c c . 
+        `)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     Token.destroy(effects.spray, 500)
